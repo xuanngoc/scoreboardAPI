@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :games
+
+  post "/games/:id/score", :to => "games#score" 
   
 end
