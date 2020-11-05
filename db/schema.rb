@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_04_174054) do
+ActiveRecord::Schema.define(version: 2020_11_05_014317) do
 
   create_table "games", force: :cascade do |t|
     t.integer "winner"
   end
 
-  create_table "games_players", id: false, force: :cascade do |t|
+  create_table "games_players", force: :cascade do |t|
     t.integer "point"
     t.integer "user_id"
     t.integer "game_id"
