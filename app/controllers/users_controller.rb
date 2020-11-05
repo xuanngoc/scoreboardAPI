@@ -22,4 +22,10 @@ class UsersController < ApplicationController
         render :json => User.find(params[:id]).destroy
     end    
 
+    def leaderboard
+        users = User.order("wins_count - loses_count DESC")
+        render :json => {:user => users}
+    end
+
+
 end
