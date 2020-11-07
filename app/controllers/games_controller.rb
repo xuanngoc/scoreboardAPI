@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
-
+    
+    #before_action :authenticate_user!
+    
     def create
         game = Game.create(winner:0)
         player1 = User.find(params[:players][:A])
