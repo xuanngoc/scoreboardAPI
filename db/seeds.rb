@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Generate a bunch of additional users.
-50.times do |n|
-    name = Faker::Name.name
-    wins_count = 0
-    loses_count = 0
-    User.create!(name: name,
-                wins_count: wins_count,
-                loses_count: loses_count)
-  end
+# 50.times do |n|
+#     name = Faker::Name.name
+#     wins_count = 0
+#     loses_count = 0
+#     User.create!(name: name,
+#                 wins_count: wins_count,
+#                 loses_count: loses_count)
+#   end
