@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  use_doorkeeper do
+    # No need to register client application
+    skip_controllers :applications, :authorized_applications
+  end
   # use_doorkeeper
   # devise_for :users
 
   #resources :users
   
+  devise_for :users, controllers: {
+    registrations: 'api/v1/users/registrations',
+    passwords: 'api/v1/users/passwords'
+  }, skip: [:sessions]
 
   resources :games
 

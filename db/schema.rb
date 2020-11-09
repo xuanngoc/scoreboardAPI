@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_06_023146) do
+ActiveRecord::Schema.define(version: 2020_11_08_162944) do
 
   create_table "games", force: :cascade do |t|
     t.integer "winner"
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2020_11_06_023146) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "wins_count"
-    t.integer "loses_count"
+    t.integer "wins_count", default: 0
+    t.integer "loses_count", default: 0
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
