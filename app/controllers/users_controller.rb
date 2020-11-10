@@ -4,10 +4,10 @@ class UsersController < ApplicationController
         render :json => {:user => User.all}, :status => 200
     end
 
-    def create 
-        user = User.create(:name => params[:user][:name], :wins_count => 0, :loses_count => 0)
-        render :json => {:user => user}, :status => 201
-    end
+    # def create 
+    #     user = User.create(:name => params[:user][:name], :wins_count => 0, :loses_count => 0)
+    #     render :json => {:user => user}, :status => 201
+    # end
 
     def show 
         begin
