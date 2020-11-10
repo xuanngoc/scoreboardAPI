@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class User::RegistrationsController < Devise::RegistrationsController
+class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -10,9 +10,15 @@ class User::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    build_resource(sign_up_params)
+    if resource.valid?
+      super
+    else
+      render :status => 400
+    end
+
+  end
 
   # GET /resource/edit
   # def edit
@@ -59,4 +65,11 @@ class User::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private 
+
+  def sign_up_params
+    params.permit(:email, :name, :password)
+  end
+
 end

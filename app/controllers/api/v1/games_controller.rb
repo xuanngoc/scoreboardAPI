@@ -1,6 +1,6 @@
-class GamesController < ApplicationController
+class Api::V1::GamesController < ApplicationController
     
-    #before_action :authenticate_user!
+    before_action :doorkeeper_authorize!
     
     def create
         game = Game.create(winner:0)
